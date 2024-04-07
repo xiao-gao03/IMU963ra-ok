@@ -1,0 +1,19 @@
+"E:\software\IAR\arm\bin\armPROC.dll" 
+
+"E:\software\IAR\arm\bin\armJET.dll" 
+
+"E:\project\smart car\modlecode\E05_04_imu963ra_demo\iar\Debug_m0_plus\Exe\cyt4bb7_cm_0_plus.out" 
+
+--plugin="E:\software\IAR\arm\bin\armLibSupportUniversal.dll" 
+
+--device_macro="E:\software\IAR\arm/config/debugger/Infineon/CYT4BB_M0.dmac" 
+
+--device_macro="E:\software\IAR\arm/config/debugger/Infineon/CYTVII_M0.dmac" 
+
+--device_macro="E:\software\IAR\arm/config/debugger/Infineon/CYTVII_Common.dmac" 
+
+--flash_loader="E:\software\IAR\arm/config/flashloader/Infineon/FlashCYT4_CF4M_WF256K.board" 
+
+
+
+
