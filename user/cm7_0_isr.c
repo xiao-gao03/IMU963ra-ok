@@ -35,16 +35,19 @@
 
 
 #include "zf_common_headfile.h"
+#include "pose.h"
+
+
 // **************************** PITÖÐ¶Ïº¯Êý ****************************
 void pit0_ch0_isr()
 {
+
     pit_isr_flag_clear(PIT_CH0);
+
+		
 		
 
-  
-
-	
-	
+		
 }
 
 void pit0_ch1_isr()

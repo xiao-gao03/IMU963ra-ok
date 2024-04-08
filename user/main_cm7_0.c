@@ -73,8 +73,14 @@
 // **************************** 代码区域 ****************************
 #define LED1                    (P19_0)                                         // 单排排针 SPI 两寸屏 这里宏定义填写 IPS200_TYPE_SPI
 
-Pose_Module pose;
+		
+float acc_x = 0 , acc_y = 0 , acc_z = -980.0f;
+float gyro_x = 0, gyro_y = 0, gyro_z = 0;
+float mag_x = 0, mag_y = 0, mag_z = 0;
+float pit, rol, yaw;
 
+Pose_Module pose;
+		
 int main(void)
 {
     clock_init(SYSTEM_CLOCK_250M); 	// 时钟配置及系统初始化<务必保留>
@@ -85,17 +91,9 @@ int main(void)
 		//pit_enable(PIT_CH0);
 		//IMU_963ra_Init();
     gpio_init(LED1, GPO, GPIO_HIGH, GPO_PUSH_PULL);                             // 初始化 LED1 输出 默认高电平 推挽输出模式
-		
-		
-		
-		float acc_x = 0 , acc_y = 0 , acc_z = -980.0f;
-		float gyro_x = 0, gyro_y = 0, gyro_z = 0;
-		float mag_x = 0, mag_y = 0, mag_z = 0;
-		float pit, rol, yaw;
-		
-		
-				//初始化结构体
+	
 		initPose_Module(&pose);
+		
 		//连接接口
 		pose.interface.data.a_x = &acc_x;
 		pose.interface.data.a_y = &acc_y;
@@ -106,7 +104,7 @@ int main(void)
 		pose.interface.data.m_x = &mag_x;
 		pose.interface.data.m_y = &mag_y;
 		pose.interface.data.m_z = &mag_z;
-	
+		
     while(1)
     {
         if(imu963ra_init())
@@ -124,9 +122,9 @@ int main(void)
     while(true)
     {
         // 此处编写需要循环执行的代码
-      imu963ra_get_acc();                                                     // 获取 imu963ra 的加速度测量数值
-      imu963ra_get_gyro();                                                    // 获取 imu963ra 的角速度测量数值
-      imu963ra_get_mag();                                                     // 获取 IMU963RA 的地磁计测量数值
+			imu963ra_get_acc();                                                     // 获取 imu963ra 的加速度测量数值
+			imu963ra_get_gyro();                                                    // 获取 imu963ra 的角速度测量数值
+			imu963ra_get_mag();                                                     // 获取 IMU963RA 的地磁计测量数值
 			
 			acc_x = imu963ra_acc_transition(imu963ra_acc_x)*100;
 			acc_y = imu963ra_acc_transition(imu963ra_acc_y)*100;
@@ -137,14 +135,15 @@ int main(void)
 			mag_x = imu963ra_mag_transition(imu963ra_mag_x);
 			mag_y = imu963ra_mag_transition(imu963ra_mag_y);
 			mag_z = imu963ra_mag_transition(imu963ra_mag_z);
-			
+				
 			calculatePose_Module(&pose, 0.005f);
-			
+		
 			pit = pose.data.pit;
- 			rol = pose.data.rol;
+			rol = pose.data.rol;
 			yaw = pose.data.yaw;
 			
-			printf("\r\n roll:%f   yaw:%f   pitch:%f \r\n",rol,yaw,pit);
+			printf("\r\n YAW:%f \r\n",yaw);
+
       //system_delay_ms(500);
         // 此处编写需要循环执行的代码
     }

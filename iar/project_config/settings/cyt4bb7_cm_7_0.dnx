@@ -41,8 +41,8 @@
     <SWOManager>
         <SamplingDivider>8192</SamplingDivider>
         <OverrideClock>0</OverrideClock>
-        <CpuClock>4995127642704335939</CpuClock>
-        <SwoClock>4847373230410779457</SwoClock>
+        <CpuClock>5927111301654192175</CpuClock>
+        <SwoClock>8239164412772092500</SwoClock>
         <DataLogMode>0</DataLogMode>
         <ItmPortsEnabled>63</ItmPortsEnabled>
         <ItmTermIOPorts>1</ItmTermIOPorts>
@@ -52,11 +52,11 @@
         <PowerConnectPC>1</PowerConnectPC>
     </SWOManager>
     <ArmDriver>
-        <EnforceMemoryConfiguration>1</EnforceMemoryConfiguration>
         <EnableCache>1</EnableCache>
+        <EnforceMemoryConfiguration>1</EnforceMemoryConfiguration>
     </ArmDriver>
     <DebugChecksum>
-        <Checksum>2066060763</Checksum>
+        <Checksum>4268143526</Checksum>
     </DebugChecksum>
     <Disassembly>
         <MixedMode>1</MixedMode>
@@ -106,7 +106,10 @@
         <Bp1>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\code\correct.c}.90.2" 0 0 1 "" 0 "" 0</Bp1>
         <Bp2>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\code\correct.c}.92.2" 0 0 1 "" 0 "" 0</Bp2>
         <Bp3>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\code\correct.c}.68.2" 0 0 1 "" 0 "" 0</Bp3>
-        <Count>4</Count>
+        <Bp4>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\user\main_cm7_0.c}.146.1" 0 0 1 "" 0 "" 0</Bp4>
+        <Bp5>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\user\cm7_0_isr.c}.49.1" 0 0 1 "" 0 "" 0</Bp5>
+        <Bp6>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\user\main_cm7_0.c}.94.1" 0 0 1 "" 0 "" 0</Bp6>
+        <Count>7</Count>
     </Breakpoints2>
     <Aliases>
         <Count>0</Count>
